@@ -12,6 +12,7 @@ const express = require('express')
 const hbs = require('hbs');
 const fs = require('fs')
 
+//here, we need to create a variable that contains the local port when we develop or an environment port that heroku chooses when it serves our app
 const port = process.env.PORT || 3000
 const app = express();
 
@@ -30,9 +31,10 @@ app.use((req,res,next) => {
     next()
 })
 
-app.use((req,res,next) => {
-    res.render('maintenance.hbs')
-})
+//I'm bypassing this so the app will run
+// app.use((req,res,next) => {
+//     res.render('maintenance.hbs')
+// })
 
 hbs.registerHelper('getCurrentYear',() => {
     return new Date().getFullYear()
@@ -63,6 +65,7 @@ app.get('/bad', (req,res) => {
     })
 })
 
+//here, we set the first argument to our 'port' variable so it'll know which one to use
 app.listen(port,() => {
     console.log(`Server is up on ${port}!`)
 })
