@@ -2,6 +2,7 @@
 //First, we need to visit 'heroku.com' and create a free account
 //Next, visit the heroku 'dashboard', but just make sure you see it, don't do anything there
 //We are then going to install the heroku cli tools so we can deploy, update, etc. our app to heroku
+//we need to create a script in our package.json file under "scripts" called "start": "node server.js". This is specific and needs to be created for heroku to work
 //We need to install via npm with the following: 'npm i -g heroku'
 //this will install heroku globally so we can use it on the command line
 //next, we need to login via the command line by typing 'heroku login' and then enter your credentials
