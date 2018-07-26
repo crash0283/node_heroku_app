@@ -1,13 +1,12 @@
-//In this lesson, we will show how we can deploy our app to a service called 'heroku'
-//First, we need to visit 'heroku.com' and create a free account
-//Next, visit the heroku 'dashboard', but just make sure you see it, don't do anything there
-//We are then going to install the heroku cli tools so we can deploy, update, etc. our app to heroku
-//we need to create a script in our package.json file under "scripts" called "start": "node server.js". This is specific and needs to be created for heroku to work
-//We need to install via npm with the following: 'npm i -g heroku'
-//this will install heroku globally so we can use it on the command line
-//next, we need to login via the command line by typing 'heroku login' and then enter your credentials
-//then, we need to run 'heroku keys: add' to add an ssh key to our heroku account
-//then we run 'ssh -v git@heroku.com' to generate some ssh keys from github to heroku
+
+// Student Challenge
+// 1. Create a 'Projects' page to the website
+// 2. This will be a page where we can link to our Github projects
+// 3. You'll need to make a new route with 'app.get' called '/projects' which will use 'res.render' to render a new .hbs template
+// 4. In the 'projects.hbs' page, you'll need to render a header and footer along with the content of the page which should just say 'Project Page Here'
+// 5. In the partials 'header' file, add a link to route to the new 'projects' page
+// 6. Then, once you tested it and it works locally, you'll need to add and commit it to Github
+// 7. Finally, you'll need to then push it up to the heroku remote which is the command 'git push heroku master'
 
 const express = require('express')
 const hbs = require('hbs');
@@ -56,6 +55,12 @@ app.get('/', (req,res) => {
 app.get('/about',(req,res) => {
     res.render('about.hbs',{
         pageTitle: 'About Page'
+    })
+})
+
+app.get('/projects',(req,res) => {
+    res.render('projects.hbs',{
+        pageTitle: 'Projects Page'
     })
 })
 
